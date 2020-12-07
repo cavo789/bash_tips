@@ -1,0 +1,8 @@
+<config>
+    <project-name>Test project</project-name>
+    <packages>
+        <package name="git" enabled="1" />
+        <package name="xdebug" enabled="0" />
+        <package name="postgres" enabled="1" />
+    </packages>
+</config>
