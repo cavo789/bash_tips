@@ -2,7 +2,7 @@
 <!-- Don't modify this file manually (you'll loose your changes) -->
 <!-- but run the tool once more -->
 
-<!-- Last refresh date: 2020-12-07 22:17:13 -->
+<!-- Last refresh date: 2020-12-07 22:45:25 -->
 
 <!-- below, content of ./index.md -->
 
@@ -10,7 +10,13 @@
 
 ![Banner](./banner.svg)
 
+## Free dev guide
+
+`Introduction to bash scripting` is a free Introduction to Bash Scripting eBook:
+[https://github.com/bobbyiliev/introduction-to-bash-scripting](https://github.com/bobbyiliev/introduction-to-bash-scripting)
+
 <!-- table-of-contents - start -->
+* [Free dev guide](#free-dev-guide)
 * [Bash on ms-dos](#bash-on-ms-dos)
   * [Run bash from Windows 10](#run-bash-from-windows-10)
     * [Add an alias](#add-an-alias)
