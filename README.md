@@ -2,7 +2,7 @@
 <!-- Don't modify this file manually (you'll loose your changes) -->
 <!-- but run the tool once more -->
 
-<!-- Last refresh date: 2020-12-07 22:45:25 -->
+<!-- Last refresh date: 2021-03-22 08:31:10 -->
 
 <!-- below, content of ./index.md -->
 
@@ -22,6 +22,10 @@
     * [Add an alias](#add-an-alias)
     * [Possible problems](#possible-problems)
 * [Bash with git bash](#bash-with-git-bash)
+* [Some helpers](#some-helpers)
+  * [printf](#printf)
+    * [Color](#color)
+    * [Long string](#long-string)
 * [XML processing](#xml-processing)
   * [Extract the value of a node](#extract-the-value-of-a-node)
   * [Get the list of elements](#get-the-list-of-elements)
@@ -119,6 +123,58 @@ $files.ForEach({Set-ProcessMitigation $_ -Disable ForceRelocateImages})
 
 * Move the git command folder before system32
 * Execute git as an administrator
+
+<!-- below, content of ./helpers/readme.md -->
+
+## Some helpers
+
+Below a few helpers to code faster.
+
+<!-- below, content of ./helpers/printf/readme.md -->
+
+### printf
+
+#### Color
+
+Using a format like below to write text in light green:
+
+```bash
+printf "\e[1;92m%s\e[m\n" "Success!"
+```
+
+Change the value of `31` (red) to a value between `30` and `37` (for dark) or between `90` and `96` (for light) to use another color (see [https://misc.flogisoft.com/bash/tip_colors_and_formatting#foreground_text](https://misc.flogisoft.com/bash/tip_colors_and_formatting#foreground_text) for more ANSI colors).
+
+#### Long string
+
+The following example shows how to use an array to split a long string into smaller one and print it with one call:
+
+```bash
+text=(
+    "Line 1 ..."
+    "Line 2 ..."
+    "Line 3 ..."
+)
+
+printf "%s\n" "${text[@]}"
+```
+
+Now, you can also use colors. The following line will display each line in red:
+
+```bash
+printf "\e[1;31m%s\e[m\n" "${text[@]}"
+```
+
+Real example, the following code will display an error message in red:
+
+```bash
+text=(
+    "ArgumentCountError - Please call ${FUNCNAME[0]}() with one parameter:"
+    "the name of the file to read"
+    "For instance: ${FUNCNAME[0]} 'readme.txt'"
+)
+
+printf "\e[1;31m%s\e[m\n" "${text[@]}"
+```
 
 <!-- below, content of ./xml/readme.md -->
 
